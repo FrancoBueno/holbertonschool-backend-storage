@@ -32,7 +32,7 @@ def call_history(method: Callable) -> Callable:
 def count_calls(method: Callable) -> Callable:
     """ counts how many times methods of the Cache class are called"""
     key = method.__qualname__
-    
+
     @wraps(method)
     def wrapper(self, *args, **kwds):
         """wrapped function that increments the key"""
